@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(43, 101, 114);
+}
+ /*borde para el juego*/
+body .juegosMatematicos {
+    width: 20rem;
+    height: 40rem;
+    border-radius: 2rem;
+    border: 5px solid #2e15bb; 
+}
+
+body .juegosMatematicos #caja1 h1,
+body .juegosMatematicos #caja2 h1 {
+    font-weight: bold;
+    color: #fff;
+    text-align: center; 
+}
+
+body .juegosMatematicos #caja1 #tables{
+    text-align: center;
+   
+}
+
+body .juegosMatematicos #caja1 #tables label,
+body .juegosMatematicos #caja2 #tables label {
+    text-align: center;
+    color: #fff;
+    font-weight: bold
+}
+
+ /*errores*/
+body .juegosMatematicos #caja1 #tables .invalid-feedback,
+body .juegosMatematicos #caja2 #tables .invalid-feedback {
+    color: rgb(248, 11, 11);
+}
+
+
+.btn-secondary {
+    font-size: 2rem;
+    margin-top: 1rem;
+    background-color: #2e15bb;;
+    border-radius: 10px
+}
+
+.btn-secondary:hover{
+    background-color: white;
+    color:#2e15bb;
+}
+
+ /*caja2 resultados*/
+body .juegosMatematicos #caja2 {
+    display: none;
+    
+}
+
+body .juegosMatematicos #caja2 a{
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    font-size: bold;
+}
+body .juegosMatematicos #caja2 #resultado {
+    width: 90%;  
+}
+body #caja2 #resultado td{ 
+      font-weight: bold;
+      font-size: 2rem;
+      color: #fff;
+      text-align: center;  
+      padding: 3px; 
+      background: #1794fa80;
+   
+}

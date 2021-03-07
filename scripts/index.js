@@ -104,3 +104,64 @@ console.log(tasks);
 let result = tasks.map((task) => task.name);
 console.log(result);
 
+
+
+//Nivel 2
+//Ejercicio 7 y 8
+
+document.getElementById("submit").addEventListener ("click",() => {
+  let num1 = document.forms["tables"]["num1"]; 
+  let num2 = document.forms["tables"]["num2"]; 
+  
+  
+  num1.classList.remove("is-invalid"); 
+  document.getElementById("error1").textContent ="";
+  
+  num2.classList.remove("is-invalid"); 
+  document.getElementById("error2").textContent ="";
+  
+   // Verificamos si esta vacio o los numeros son mayor de 10 o menos 1 para poner la clase is-invalid y dar el error
+  if(num1.value == "" || num1.value > 10 || num1.value < 1) {
+      num1.classList.add("is-invalid");
+      document.getElementById("error1").textContent = "No puedes escribir un numero menor de 1 y mayor de 10";
+  }
+  if (num2.value == "" || num2.value > 10 || num2.value < 1) {
+      num2.classList.add("is-invalid");
+      document.getElementById("error2").textContent = "No puedes escribir un numero menor de 1 y mayor de 10";
+}
+   //Si estan los 2 numeros y estan entre el 1 y el 10
+  if ((num1.value != "" && num1.value <= 10 && num1.value >= 1) && (num2.value != "" && num2.value <= 10 && num2.value >= 1)) { 
+      let tablaRes = document.getElementById("resultado"); 
+      tablaRes.classList.add("tabla");
+      changePage();
+      makeTable(num1, num2, tablaRes);
+  }
+});
+
+
+//Se crea la tabla
+const makeTable = (num1, num2, tablaRes, numStart=1) => {
+  
+
+  if (numStart <= num2.value){
+      // Si el numero 1 es menor al numero 2  se crean columnas
+      let row = document.createElement('tr');
+      tablaRes.appendChild(row); 
+      //se crean las filas
+      let datos = document.createElement('td'); 
+      row.appendChild(datos);
+      datos.textContent = `${num1.value}x${numStart}`;
+      let datos2 = document.createElement('td'); 
+      row.appendChild(datos2);
+      //Se imprime el resultado
+      datos2.textContent = `= ${num1.value * numStart}`;  
+     // al numStar se le incrementa +1
+      makeTable(num1, num2, tablaRes, numStart+1);
+  }
+}
+
+//Funcion para cambiar de pagina cuando se da click
+const changePage = () => {
+  document.getElementById("caja1").style.display = "none";
+  document.getElementById("caja2").style.display = "block";
+}

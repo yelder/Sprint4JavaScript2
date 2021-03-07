@@ -15,10 +15,37 @@
 </head>
 
 <body>
+    <section class="juegosMatematicos">
+
+        <article id="caja1" class="">
+
+            <h1>Juegos Matemáticos</h1>
 
 
-    </article>
+            <form id="tables" name="tables">
+                <label for="num1">Escribe un numero del 1 al 10</label>
+                <input type="number" class="form-control" id="num1" name="num1">
+                <section class="invalid-feedback" id="error1"></section>
 
+                <label for="num2">Escribe otro numero del 1 al 10</label>
+                <input type="number" class="form-control" id="num2" name="num2">
+                <section class="invalid-feedback" id="error2"></section>
+
+                <button class="btn btn-secondary" type="button" id="submit">
+                    Dar click
+                </button>
+            </form>
+        </article>
+
+        <article id="caja2">
+            <h1>Resultado</h1>
+            <section id="resultado"></section>
+            <a href="index.html">
+                <p> Volver al juego</p>
+            </a>
+        </article>
+
+    </section>
 
     <script src="./scripts/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
